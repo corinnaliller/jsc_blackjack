@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- Corinna Liller, BBM2H17M -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>BlackJack Tisch</title>
+	<script src="../js/casino.js"></script>
+	<link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+	<nav style="align-self: flex-start">
+		<div>
+			<div><a href="index.html">Home</a></div>
+		</div>
+		<div>
+			<a href="spielregeln.html" target="_blank">Black Jack Regeln</a>
+		</div>
+		<div>
+			<a href="kontakt.html" target="_blank">Kontakt</a>
+		</div>
+        <div>
+			<a href="impressum.html" target="_blank">Impressum</a>
+		</div>            
+      </nav>
+<div class="casino">
+	<h2 id="header">BlackJack</h2>
+	<div id="bj">
+		<div id="spieltisch">
+			<div id="buttons">
+				<div><input type="button" value="Neues Spiel" name="neu" onClick="blackjack('neu')"></div>
+				<div id="versicherungsdiv" style="display: none"><input type="number" id="versicherungssumme" value="0">
+				<input type="button" name="versicherung" value="Versicherung kaufen" onClick="blackjack('versicherung')"></div>
+				
+			</div>
+			<div id="bjBank">
+				<img class="dealer" id="dealer1" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer2" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer3" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer4" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer5" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer6" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer7" src="../images/cards/empty.png">
+				<img class="dealer" id="dealer8" src="../images/cards/empty.png">
+			</div>
+			<div id="deck">
+				<img id="cardDeck" src="../images/cards/Ruecken.png">
+			</div>
+			<div id="bjPlayer">
+				<img class="player" id="player1" src="../images/cards/empty.png">
+				<img class="player" id="player2" src="../images/cards/empty.png">
+				<img class="player" id="player3" src="../images/cards/empty.png">
+				<img class="player" id="player4" src="../images/cards/empty.png">
+				<img class="player" id="player5" src="../images/cards/empty.png">
+				<img class="player" id="player6" src="../images/cards/empty.png">
+				<img class="player" id="player7" src="../images/cards/empty.png">
+				<img class="player" id="player8" src="../images/cards/empty.png">
+			</div>
+		</div>
+		<div id="punktestand">
+			<table id="blackjackpunkte">
+				<tr>
+					<td colspan="2" id="bankPunkte"></td>	
+				</tr>
+				<tr>
+					<td colspan="2" id="spielerPunkte"></td>
+				</tr>
+				<tr>
+					<td colspan="2" id="money"></td>
+				</tr>
+				<tr>
+					<td colspan="2" id="einsatz"></td>
+				</tr>
+				<tr id="tablebuttons" style="display: none">
+					<td>
+						<input type="button" value="Karte" onClick="blackjack('karte')">
+					</td>
+					<td>
+						<input type="button" value="steht" onClick="blackjack('steht')">
+					</td>
+				</tr>
+				<tr id="dd" style="display: none">
+					<td colspan="2" id="doubleDown"><input type="button" value="Double down!" onClick="blackjack('doubleDown')"></td>
+				</tr>
+				<tr>
+					<td colspan="2" id="ergebnis"></td>
+				</tr>
+				<tr>
+					<td colspan="2" id="insureMe"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+</div>
+	
+	
+</body>
+</html>

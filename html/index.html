@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- Corinna Liller, BBM2H17M -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>BlackJack-Trainer Startseite</title>
+<link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+	<script>
+		function checkForm() {
+			var spieler, alter, nachricht;
+			var message = "";
+			var okay = true;
+			spieler = document.getElementById('spielername').value;
+			alter = parseInt(document.getElementById('alter').value);
+			nachricht = document.getElementById('nachricht');
+			
+			if ('' == spieler) {
+				message += "Bitte geben Sie Ihren Namen ein! ";
+				okay = false;
+			}
+			
+			if (alter < 18) {
+				message += "Sie müssen 18 sein, um zu spielen!";
+				okay = false;
+			}
+			if (!okay) {
+				nachricht.innerHTML = message;
+			}
+			else {
+				cookies(spieler);
+			}
+			
+			return okay;
+			
+			function cookies(user) {
+				d = new Date();
+				d.setHours(d.getHours()+2);
+				document.cookie = "User="+user+"; expires="+d.toGMTString();
+			}
+		}
+	</script>
+	<nav style="align-self: flex-start">
+		<div>
+			<div><a href="index.html">Home</a></div>
+		</div>
+		<div>
+			<a href="spielregeln.html" target="_blank">Black Jack Regeln</a>
+		</div>
+		<div>
+			<a href="kontakt.html" target="_blank">Kontakt</a>
+		</div>
+        <div>
+			<a href="impressum.html" target="_blank">Impressum</a>
+		</div>            
+      </nav>
+	
+	<div id="login">
+		<h2>Herzlich willkommen beim BlackJack-Trainer</h2>
+		<div>
+			<form onSubmit="return checkForm()" action="blackjack.html">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input id="spielername"></td>
+				</tr>
+				<tr>
+					<td>Alter:</td>
+					<td><input type="number" id="alter" value="0"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Hineingehen"></td>
+				</tr>
+				<tr>
+					<td colspan="2" id="nachricht"></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+		
+
+	</div>
+	
+</body>
+</html>
